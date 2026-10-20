@@ -4,9 +4,9 @@
 
 Pengxuan Huang<sup>1</sup>, Siyu Zhou<sup>2</sup>, Jianzhao Feng<sup>3,*</sup>
 
-<sup>1</sup>Delft University of Technology &nbsp;·&nbsp; <sup>2</sup>Ludwig-Maximilians-Universität München &nbsp;·&nbsp; <sup>3</sup>South China Agricultural University &nbsp;·&nbsp; <sup>*</sup>Corresponding author
+<sup>1</sup>Delft University of Technology &nbsp;·&nbsp; <sup>2</sup>Ludwig-Maximilians-Universität München &nbsp;·&nbsp; <sup>3</sup>South China Agricultural University &nbsp;·&nbsp;
 
-IPICE 2026 · Proceedings of SPIE &nbsp;|&nbsp; [[Paper]](LINK_TO_PAPER) &nbsp;|&nbsp; [[Checkpoints]](#pretrained-models) &nbsp;|&nbsp; [[Citation]](#citation)
+IPICE 2026 · Proceedings of SPIE 
 
 <p align="center">
   <img src="assets/framework.png" width="850" alt="CSLRF-2D framework"/>
@@ -135,10 +135,10 @@ This reports Dev and Test WER.
 
 ## Pretrained Models
 
-| Dataset        | Dev WER | Test WER |  Download  |
-| -------------- | :-----: | :------: | :---------: |
-| PHOENIX-2014-T | 19.10% |  20.05%  | [link](LINK) |
-| CSL-Daily      | 29.14% |  28.70%  | [link](LINK) |
+| Dataset        | Dev WER | Test WER |                                   Download                                   |
+| -------------- | :-----: | :------: | :--------------------------------------------------------------------------: |
+| PHOENIX-2014-T | 19.10% |  20.05%  | [link](https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/) |
+| CSL-Daily      | 29.14% |  28.70%  |          [link](https://ustc-slr.github.io/datasets/2021_csl_daily/)          |
 
 ## Visualisation
 
