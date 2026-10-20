@@ -1,0 +1,57 @@
+feeder: dataset_r.dataloader_video.BaseFeeder
+phase:  train # train, test, eval, CPC_pretrain ， CPC_train, ResNet_LSTM
+dataset: phoenix2014-T
+# dataset: phoenix14-si5
+num_epoch: 40
+work_dir: ./work_dir/baseline_res18/
+batch_size: 2
+random_seed: 0
+test_batch_size: 2
+num_worker: 8
+device: 0,1
+log_interval: 10000
+eval_interval: 1
+save_interval: 5
+# python in default
+evaluate_tool: python
+pretrain_CPC_path: "pretrain_CPC_res_fre2" # pretrain_CPC_resnet_freeze  pretrain_CPC, pretrain_CPC_res_fre4
+train_CPC_load_path: "pretrain_CPC_res_fre2/epoch8_bs4_model.pt"
+loss_weights:
+  SeqCTC: 1.0
+  # VAC
+  ConvCTC: 1.0
+  Dist: 25.0
+#load_weights: ''
+
+optimizer_args:
+  optimizer: Adam
+  base_lr: 0.0001
+  step: [ 20, 35]
+  learning_ratio: 1
+  weight_decay: 0.0001
+  start_epoch: 0
+  nesterov: False
+
+feeder_args:
+  mode: 'train'
+  datatype: 'video'
+  num_gloss: -1
+  drop_ratio: 1.0
+  frame_interval: 1
+  image_scale: 1.0  # 0-1 represents ratio, >1 represents absolute value
+  input_size: 224
+
+model: slr_network.SLRModel # slr_network.SLRModel, slr_network.CPC_SLRModel
+decode_mode: beam
+model_args:
+  num_classes: 1296
+  c2d_type: resnet18 #resnet18, mobilenet_v2, shufflenet_v2_x1_0, shufflenet_v2_x0_5
+  conv_type: 2
+  use_bn: 1
+  n_pred_step: 2
+  pixel_pred_step: 2
+  context_dim: 512 
+  embedding_dim: 512
+  # SMKD
+  share_classifier: True
+  weight_norm: True
